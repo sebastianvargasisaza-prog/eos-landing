@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Costeo real de un laboratorio cosmético · Por qué tus márgenes mienten | EOS</title>
+<meta name="description" content="Cómo costear correctamente un cosmético: FIFO vs promedio, MEEs, mano de obra directa, indirectos, mermas, costos absorbidos. Por qué el costeo en Excel subestima 15-30% el costo real.">
+<meta name="keywords" content="costeo laboratorio cosmético, costeo cosmético colombiano, costo absorción cosmético, FIFO promedio ponderado cosmético, costeo manufactura cosmética, margen real laboratorio cosmético">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://eossuite.com/recursos/costeo-real-laboratorio-cosmetico.html">
+<meta name="theme-color" content="#6d28d9">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Costeo real de un laboratorio cosmético">
+<meta property="og:description" content="Por qué el costeo en Excel subestima 15-30% el costo real — y qué decisiones tomas mal por eso.">
+<meta property="og:url" content="https://eossuite.com/recursos/costeo-real-laboratorio-cosmetico.html">
+<meta property="og:image" content="https://eossuite.com/assets/img/og.png">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="stylesheet" href="/assets/css/eos.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Costeo real de un laboratorio cosmético",
+  "datePublished": "2026-04-30",
+  "dateModified": "2026-04-30",
+  "author": {"@type": "Person", "name": "Sebastián Vargas Isaza"},
+  "publisher": {"@type": "Organization", "name": "EOS · HHA Group", "logo": {"@type": "ImageObject", "url": "https://eossuite.com/assets/img/logo-eos.svg"}},
+  "image": "https://eossuite.com/assets/img/og.png",
+  "description": "Costeo correcto de manufactura cosmética en Colombia.",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://eossuite.com/recursos/costeo-real-laboratorio-cosmetico.html"}
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__brand"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round"><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/><path d="M5 19 Q 16 17, 27 19" stroke-width="1.5" opacity=".55"/><path d="M5 23 Q 16 21, 27 23" stroke-width="1.5" opacity=".25"/></svg><span>EOS</span></a>
+    <button class="nav__menu-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <div class="nav__links">
+      <a href="/producto.html">Producto</a>
+      <a href="/precios.html">Precios</a>
+      <a href="/sobre.html">Sobre</a>
+      <a href="/casos/hha-group.html">Casos</a>
+      <a href="/recursos/guia-cumplimiento-invima.html">Recursos</a>
+      <a href="/demo.html" class="btn btn-primary btn-sm">Solicitar demo</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding:96px 0 56px">
+  <div class="container">
+    <div class="hero__inner">
+      <span class="hero__eyebrow">Recurso · Para CFOs y CEOs de laboratorio</span>
+      <h1>Costeo real<br>de un laboratorio cosmético.</h1>
+      <p class="lead">El 80% de los laboratorios cosméticos colombianos costean mal sus productos. Subestiman entre 15% y 30% el costo real. Vendes con 35% de margen pensado y en realidad tienes 18%. Esta es la guía honesta de cómo costear bien — y qué decisiones cambian cuando lo haces.</p>
+      <p class="muted" style="font-size:13px">Lectura · 8 minutos · Por Sebastián Vargas Isaza, MD MPH</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">El problema</span>
+    <h2>Tu costo no es lo que dice tu hoja de Excel.</h2>
+    <p>El costeo "fácil" en cosmética típicamente se hace así:</p>
+    <pre style="background:#f1f5f9;padding:16px;border-radius:8px;font-size:13px;overflow:auto"><code>Costo lote = Σ (cantidad MP × precio MP) + envases + etiquetas
+Costo unitario = Costo lote / unidades producidas
+Margen = (Precio venta - Costo unitario) / Precio venta</code></pre>
+    <p>Esto pasa por alto al menos 6 elementos que SÍ son costo real:</p>
+    <ol>
+      <li><strong>El precio promedio de la MP no es el precio del lote consumido</strong> — si compraste glicerina a $12K/kg en enero y a $14.5K/kg en marzo, ¿cuál es el costo del lote producido en abril? Depende del método (FIFO, promedio ponderado, último costo).</li>
+      <li><strong>Mano de obra directa</strong> — el operario tiene un costo por hora que se distribuye en los lotes que produce. Excel rara vez lo asigna.</li>
+      <li><strong>Costos indirectos absorbidos</strong> — agua, energía, gas, depreciación de equipos, alquiler de planta. Cada lote consume una porción.</li>
+      <li><strong>Mermas reales</strong> — el rendimiento teórico es 100%, el real es 92-97%. Esa diferencia es costo.</li>
+      <li><strong>Reprocesos</strong> — cuando un lote sale fuera de especificación, se reprocesa o descarta. Costo invisible.</li>
+      <li><strong>Mantenimiento y validación</strong> — calibraciones, validación de procesos, autoinspecciones. Asignables al producto.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Componente 1 — MPs</span>
+    <h2>FIFO vs promedio ponderado.</h2>
+    <p>Cuando consumes una MP de un lote, ¿a qué precio la valoras? Hay tres métodos legítimos:</p>
+    <p><strong>FIFO (First-In-First-Out):</strong> el primer lote que entró es el primero que sale. Si compraste 100 kg a $12K en enero y 50 kg a $14.5K en marzo, los primeros 100 kg consumidos van a $12K, los siguientes 50 kg a $14.5K.</p>
+    <p><strong>Promedio ponderado:</strong> calculas el precio promedio de todos los lotes en stock, ponderado por cantidad. Cada consumo va a ese promedio.</p>
+    <p><strong>Último costo:</strong> valoras al precio de la última compra. Refleja el costo de reposición pero distorsiona el costo histórico.</p>
+    <p>NIIF para PYMES en Colombia permite FIFO y promedio ponderado. <strong>NO permite LIFO</strong> ni "último costo". Si tu contador externo se queja, es porque tu costeo de Excel está usando algo no permitido.</p>
+    <p>En cosmética, FIFO es lo que mejor refleja la realidad operativa porque coincide con FEFO (consumes primero el lote que vence primero). Promedio ponderado es más simple para empresas con alta rotación.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">Componente 2 — MEEs</span>
+    <h2>Material de envase y empaque.</h2>
+    <p>Frascos, tapas, etiquetas, instructivos, cajas master, papel de seda. En cosmética los MEEs pueden ser el 25-45% del costo total dependiendo del producto (skincare premium llega al 50%+).</p>
+    <p>El costeo correcto requiere:</p>
+    <ul>
+      <li><strong>Lista exacta de MEEs por SKU</strong> — frasco 50 ml + tapa A + etiqueta frontal + etiqueta posterior + caja unitaria + caja máster por 24.</li>
+      <li><strong>Costo unitario de cada MEE</strong> — incluido transporte hasta la planta.</li>
+      <li><strong>Mermas de envasado</strong> — etiquetas dañadas, tapas defectuosas. 2-5% típico.</li>
+    </ul>
+    <p>Excel suele costear "envase y etiqueta" como una línea agregada y subestima los componentes individuales.</p>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Componente 3 — Mano de obra directa</span>
+    <h2>Costo por hora-operario por lote.</h2>
+    <p>Mano de obra directa = horas trabajadas en el lote × costo por hora del operario.</p>
+    <p>Costo por hora del operario incluye:</p>
+    <ul>
+      <li>Salario base / horas mensuales</li>
+      <li>Prestaciones sociales (cesantías, intereses, primas, vacaciones)</li>
+      <li>Seguridad social patronal (salud, pensión, ARL)</li>
+      <li>Parafiscales (cajas, ICBF, SENA)</li>
+      <li>Dotación, EPP, capacitación</li>
+    </ul>
+    <p>El factor prestacional en Colombia es típicamente <strong>1.50-1.55×</strong> el salario base. Es decir: un operario con salario base de $1.500.000 cuesta a la empresa $2.250.000-$2.325.000/mes en costo total.</p>
+    <p>Si su jornada efectiva es 160 horas/mes, el costo/hora del operario es $14.000-$14.500/hora. Multiplica por las horas en cada lote y tienes mano de obra directa.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">Componente 4 — Costos indirectos absorbidos</span>
+    <h2>Lo invisible que sí cuesta.</h2>
+    <p>Costos indirectos de fabricación (CIF) que se absorben prorrateados:</p>
+    <ul>
+      <li><strong>Servicios públicos</strong> — agua, energía, gas. Típicamente 3-8% del costo total.</li>
+      <li><strong>Arrendamiento de planta</strong> — distribuir entre los lotes producidos en el periodo.</li>
+      <li><strong>Depreciación de equipos</strong> — marmita, llenadora, bombas, mezcladoras. Vida útil 5-15 años.</li>
+      <li><strong>Mantenimiento</strong> — preventivo programado + correctivo presupuestado.</li>
+      <li><strong>Calibración</strong> — anual de balanzas, termómetros, viscosímetros.</li>
+      <li><strong>Validación de procesos</strong> — cada 2-3 años o tras cambios sustanciales.</li>
+      <li><strong>Limpieza y sanitización</strong> — productos químicos, agua, mano de obra.</li>
+      <li><strong>Calidad indirecta</strong> — director técnico, coordinador de calidad, control en línea.</li>
+    </ul>
+    <p>Tasa de absorción típica: <strong>$200-$600 COP por kg producido</strong> en plantas medianas. Excel rara vez lo carga.</p>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Componente 5 — Mermas y rendimientos</span>
+    <h2>El 100% teórico no existe.</h2>
+    <p>Pones 100 kg de MPs en la marmita. Esperas 100 kg de producto terminado. Sale 95.5 kg. ¿Dónde están los 4.5 kg?</p>
+    <ul>
+      <li><strong>Adherencia a paredes y bombas</strong> — 1-3% típicamente.</li>
+      <li><strong>Evaporación</strong> — depende de la temperatura del proceso, 0.5-2%.</li>
+      <li><strong>Muestras de control de calidad</strong> — retenidos, análisis, contramuestras. 0.2-0.5%.</li>
+      <li><strong>Pérdidas de envasado</strong> — la última fracción no envasable, derrames. 0.5-2%.</li>
+    </ul>
+    <p>El costo de los 4.5 kg perdidos ya pagaste — debe distribuirse en los 95.5 kg que sí salieron. Tu costo unitario real es mayor al teórico.</p>
+    <p>Costeo correcto: <code>Costo unitario real = Costo total del lote / Unidades realmente producidas</code>. Costeo Excel: <code>Costo unitario = Costo total / Unidades teóricas</code>. Ahí pierdes 3-7%.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">Tabla resumen</span>
+    <h2>Cuánto subestima Excel típicamente.</h2>
+    <table style="width:100%;border-collapse:collapse;margin-top:16px;font-size:14px">
+      <thead>
+        <tr style="border-bottom:2px solid var(--eos-border)">
+          <th style="text-align:left;padding:12px 8px">Componente</th>
+          <th style="text-align:left;padding:12px 8px">Excel típico</th>
+          <th style="text-align:left;padding:12px 8px">Costo real</th>
+          <th style="text-align:left;padding:12px 8px">Diferencia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px">MPs (FIFO vs último precio)</td>
+          <td style="padding:12px 8px">Subestima 5-10%</td>
+          <td style="padding:12px 8px">FIFO real</td>
+          <td style="padding:12px 8px;color:#dc2626">+5-10%</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px">MEEs (componentes)</td>
+          <td style="padding:12px 8px">Agregado, ignora mermas</td>
+          <td style="padding:12px 8px">Componentes + mermas 2-5%</td>
+          <td style="padding:12px 8px;color:#dc2626">+2-5%</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px">Mano de obra directa</td>
+          <td style="padding:12px 8px">Promedio o no se carga</td>
+          <td style="padding:12px 8px">Por horas reales × factor 1.5×</td>
+          <td style="padding:12px 8px;color:#dc2626">+3-8%</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px">Costos indirectos</td>
+          <td style="padding:12px 8px">Rara vez se cargan</td>
+          <td style="padding:12px 8px">$200-$600/kg producido</td>
+          <td style="padding:12px 8px;color:#dc2626">+5-12%</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px">Mermas (rendimiento)</td>
+          <td style="padding:12px 8px">100% teórico</td>
+          <td style="padding:12px 8px">95-97% real</td>
+          <td style="padding:12px 8px;color:#dc2626">+3-7%</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border);font-weight:700">
+          <td style="padding:12px 8px">Total subestimación</td>
+          <td style="padding:12px 8px"></td>
+          <td style="padding:12px 8px"></td>
+          <td style="padding:12px 8px;color:#dc2626">+18-42%</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="muted" style="font-size:13px;margin-top:16px">Promedio típico: <strong>+22% costo real vs costo Excel</strong>. Si vendes con 35% margen pensado, tu margen real es 13%. Si vendes con 25% margen pensado, estás perdiendo plata por unidad.</p>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Decisiones que cambian</span>
+    <h2>Qué empiezas a ver bien con costeo real.</h2>
+    <p><strong>1. Pricing.</strong> El producto que vendes a $25K en realidad te cuesta $22K, no $18K como creías. Tienes que subir precio o aceptar que ese SKU es de margen mínimo y mantenerlo solo si es estratégico.</p>
+    <p><strong>2. Mix de portafolio.</strong> El producto "estrella" que más vendes tal vez sea el que menos margen deja. Otro SKU de bajo volumen tal vez tenga 45% de margen real. La estrategia comercial cambia.</p>
+    <p><strong>3. Negociación con proveedores.</strong> Sabes el impacto exacto de un aumento del 10% en glicerina sobre el costo final. Negocias con datos.</p>
+    <p><strong>4. Inversión en planta.</strong> Si los CIF son 12% del costo, mejorar eficiencia (reducir consumo de agua/energía, automatizar dosificación) tiene ROI calculable.</p>
+    <p><strong>5. Maquila.</strong> Cuando un cliente te pide maquilar para él, sabes el costo real y puedes cotizar con margen real, no esperando.</p>
+    <p><strong>6. Decisiones make-or-buy.</strong> Hay activos que tal vez convenga comprar ya formulados en lugar de fabricarlos en casa. Solo lo sabes con costeo real.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-band">
+      <h2>EOS calcula costeo real lote a lote.</h2>
+      <p>FIFO automático, mano de obra directa por horas reales, CIF absorbidos, mermas registradas en cada producción. P&amp;L por SKU disponible cada mes sin esperar al cierre contable.</p>
+      <a href="/demo.html" class="btn btn-aurora btn-lg">Solicitar demo</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Recursos relacionados</span>
+    <h2>Sigue leyendo.</h2>
+    <div class="cards" style="margin-top:24px">
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px"><a href="/recursos/excel-vs-erp-cosmetico.html" style="color:var(--eos-text)">Excel vs ERP cosmético</a></h3>
+        <p style="font-size:14px;line-height:1.55;margin:0;color:var(--eos-text-soft)">12 cosas que pierdes cada mes operando un laboratorio en hojas de cálculo.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px"><a href="/recursos/factura-electronica-dian-cosmeticos.html" style="color:var(--eos-text)">Factura electrónica DIAN</a></h3>
+        <p style="font-size:14px;line-height:1.55;margin:0;color:var(--eos-text-soft)">PSPs autorizados, costos, integración. Guía actualizada para cosmética.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px"><a href="/casos/hha-group.html" style="color:var(--eos-text)">Caso HHA Group</a></h3>
+        <p style="font-size:14px;line-height:1.55;margin:0;color:var(--eos-text-soft)">Cómo Espagiria + ÁNIMUS Lab pasaron de Excel a costeo real con EOS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round"><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/><path d="M5 19 Q 16 17, 27 19" stroke-width="1.5" opacity=".55"/><path d="M5 23 Q 16 21, 27 23" stroke-width="1.5" opacity=".25"/></svg></div>
+        <div class="footer__brand-name">EOS</div>
+        <div class="footer__tagline">Operar claro.</div>
+      </div>
+      <div><h5>Producto</h5><ul><li><a href="/producto.html">Capacidades</a></li><li><a href="/precios.html">Precios</a></li><li><a href="/demo.html">Demo</a></li><li><a href="/casos/hha-group.html">Casos</a></li></ul></div>
+      <div><h5>Industrias</h5><ul><li><a href="/industrias/laboratorios-cosmeticos.html">Cosméticos</a></li><li><a href="/industrias/farmaceuticos.html">Farma</a></li><li><a href="/industrias/maquila-cosmetica.html">Maquila</a></li><li><a href="/industrias/marcas-dtc-shopify.html">DTC</a></li></ul></div>
+      <div><h5>Confianza</h5><ul><li><a href="/seguridad.html">Seguridad</a></li><li><a href="/status.html">Status</a></li><li><a href="/changelog.html">Changelog</a></li><li><a href="/privacidad.html">Privacidad</a></li></ul></div>
+    </div>
+    <div class="footer__base">
+      <div>© 2026 HHA Group S.A.S. — Bogotá, Colombia</div>
+      <div><a href="/privacidad.html">Privacidad</a> · <a href="/terminos.html">Términos</a> · <a href="/contacto.html">Contacto</a></div>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+</body></html>

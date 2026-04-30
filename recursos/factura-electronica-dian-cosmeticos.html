@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Factura electrónica DIAN para laboratorios cosméticos · Guía 2026 | EOS</title>
+<meta name="description" content="Cómo facturar electrónicamente con la DIAN en un laboratorio cosmético colombiano. PSPs autorizados, costos, integración con ERP, sanciones, retenciones e IVA cosmético. Actualizado 2026.">
+<meta name="keywords" content="factura electrónica DIAN cosméticos, PSP autorizado DIAN, facturación electrónica laboratorio cosmético, Resolución 042 DIAN, Carvajal FacturaTech HKA Siigo, integración factura electrónica ERP, retenciones cosméticos">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://eossuite.com/recursos/factura-electronica-dian-cosmeticos.html">
+<meta name="theme-color" content="#6d28d9">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Factura electrónica DIAN para laboratorios cosméticos · 2026">
+<meta property="og:description" content="PSPs autorizados, costos, integración con ERP, sanciones por incumplimiento. Guía actualizada para laboratorios cosméticos colombianos.">
+<meta property="og:url" content="https://eossuite.com/recursos/factura-electronica-dian-cosmeticos.html">
+<meta property="og:image" content="https://eossuite.com/assets/img/og.png">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="stylesheet" href="/assets/css/eos.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Factura electrónica DIAN para laboratorios cosméticos · Guía 2026",
+  "datePublished": "2026-04-30",
+  "dateModified": "2026-04-30",
+  "author": {"@type": "Person", "name": "Sebastián Vargas Isaza"},
+  "publisher": {"@type": "Organization", "name": "EOS · HHA Group", "logo": {"@type": "ImageObject", "url": "https://eossuite.com/assets/img/logo-eos.svg"}},
+  "image": "https://eossuite.com/assets/img/og.png",
+  "description": "Guía completa de facturación electrónica DIAN para laboratorios cosméticos colombianos.",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://eossuite.com/recursos/factura-electronica-dian-cosmeticos.html"}
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__brand"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round"><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/><path d="M5 19 Q 16 17, 27 19" stroke-width="1.5" opacity=".55"/><path d="M5 23 Q 16 21, 27 23" stroke-width="1.5" opacity=".25"/></svg><span>EOS</span></a>
+    <button class="nav__menu-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <div class="nav__links">
+      <a href="/producto.html">Producto</a>
+      <a href="/precios.html">Precios</a>
+      <a href="/sobre.html">Sobre</a>
+      <a href="/casos/hha-group.html">Casos</a>
+      <a href="/recursos/guia-cumplimiento-invima.html">Recursos</a>
+      <a href="/demo.html" class="btn btn-primary btn-sm">Solicitar demo</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding:96px 0 56px">
+  <div class="container">
+    <div class="hero__inner">
+      <span class="hero__eyebrow">Recurso · Para CFOs y contadores de laboratorio</span>
+      <h1>Facturación electrónica DIAN<br>para laboratorios cosméticos.</h1>
+      <p class="lead">Si tu laboratorio factura a otras empresas (B2B), la facturación electrónica timbrada con CUFE no es opcional — es regulatoria. Esta es la guía honesta de cómo cumplir sin pagar de más, qué PSP escoger y cómo integrarlo con tu ERP.</p>
+      <p class="muted" style="font-size:13px">Lectura · 7 minutos · Actualizado abril 2026</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">Marco normativo</span>
+    <h2>Qué exige la DIAN, en cristiano.</h2>
+    <p>La obligación de facturar electrónicamente está fundamentada en la <strong>Resolución 000042 de 2020</strong> y normas posteriores. Resumen práctico:</p>
+    <ul>
+      <li>Toda persona jurídica obligada a facturar debe emitir factura electrónica con validación previa de la DIAN.</li>
+      <li>La factura electrónica genera un <strong>CUFE</strong> (Código Único de Factura Electrónica) que valida la transacción.</li>
+      <li>El cliente recibe el XML timbrado + representación gráfica (PDF). Ambos son válidos jurídicamente.</li>
+      <li>Las facturas que no cuentan con CUFE válido <strong>no son deducibles ni dan derecho a IVA descontable</strong> para el comprador.</li>
+      <li>Existen <strong>documentos soporte electrónicos</strong> (notas crédito, débito, nómina electrónica) que también requieren validación DIAN.</li>
+    </ul>
+    <p>Si no facturas electrónicamente con CUFE, tus clientes B2B serios — cadenas de farmacias, retailers, distribuidores — no pueden trabajarte porque pierden el IVA descontable y la deducibilidad del gasto.</p>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Quién emite</span>
+    <h2>Tres caminos para facturar electrónicamente.</h2>
+    <p><strong>Camino 1 — Software gratuito DIAN.</strong> La DIAN ofrece un servicio gratuito de facturación electrónica. Funciona, pero es manual: tienes que digitar cada factura en el portal. No se integra con tu ERP. Útil para emisores de menos de 10 facturas/mes. Inviable si emites 50+/mes.</p>
+    <p><strong>Camino 2 — PSP autorizado (Proveedor de Servicios para Empresas).</strong> Un tercero autorizado por la DIAN que recibe tu factura, la timbra contra los servicios DIAN y devuelve el CUFE. Se integra vía API con tu ERP. Cobra mensualidad + por documento. Es el camino estándar para PYMEs serias.</p>
+    <p><strong>Camino 3 — Software propio + integración directa con DIAN.</strong> Construyes la integración directa con los servicios DIAN. Caro, complejo, requiere certificación y mantenimiento permanente. Solo tiene sentido para emisores con miles de facturas/mes y equipo técnico dedicado.</p>
+    <p>El 95% de los laboratorios cosméticos colombianos van por el <strong>Camino 2</strong>. Esta guía se concentra ahí.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">PSPs autorizados</span>
+    <h2>Comparativa de los 4 PSPs más usados.</h2>
+    <p>Estos son los proveedores que más vemos en cosmética colombiana. Precios aproximados a abril 2026 — cotiza con cada uno porque varían trimestralmente.</p>
+    <table style="width:100%;border-collapse:collapse;margin-top:16px;font-size:14px">
+      <thead>
+        <tr style="border-bottom:2px solid var(--eos-border)">
+          <th style="text-align:left;padding:12px 8px">PSP</th>
+          <th style="text-align:left;padding:12px 8px">Plan inicial</th>
+          <th style="text-align:left;padding:12px 8px">Timbrado incluido</th>
+          <th style="text-align:left;padding:12px 8px">API</th>
+          <th style="text-align:left;padding:12px 8px">Cuándo escogerlo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px"><strong>Carvajal</strong></td>
+          <td style="padding:12px 8px">desde $200K/mes</td>
+          <td style="padding:12px 8px">ilimitado</td>
+          <td style="padding:12px 8px">REST robusta</td>
+          <td style="padding:12px 8px">Volumen alto, soporte enterprise.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px"><strong>FacturaTech</strong></td>
+          <td style="padding:12px 8px">desde $90K/mes</td>
+          <td style="padding:12px 8px">hasta 100/mes</td>
+          <td style="padding:12px 8px">REST simple</td>
+          <td style="padding:12px 8px">Menos de 100 facturas/mes, presupuesto ajustado.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px"><strong>The Factory HKA</strong></td>
+          <td style="padding:12px 8px">desde $180K/mes</td>
+          <td style="padding:12px 8px">ilimitado</td>
+          <td style="padding:12px 8px">REST + SDK</td>
+          <td style="padding:12px 8px">Integración técnica robusta, soporte fuerte.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px"><strong>Siigo</strong></td>
+          <td style="padding:12px 8px">incluido en plan contable</td>
+          <td style="padding:12px 8px">ilimitado</td>
+          <td style="padding:12px 8px">API limitada</td>
+          <td style="padding:12px 8px">Si ya usas Siigo como contable, todo en un proveedor.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="muted" style="font-size:13px;margin-top:16px">No tenemos relación comercial con ninguno de estos PSPs. Recomendación basada en lo que vemos en el mercado.</p>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Particularidades cosméticas</span>
+    <h2>Lo que el contador de cosméticos debe configurar bien.</h2>
+    <p><strong>1. IVA por producto.</strong> Cosméticos generales tributan IVA del 19%. Algunos productos higiénicos (jabones, champús infantiles según presentación) pueden estar a tarifa diferencial. Cosmético orgánico/natural certificado puede tener tratamiento especial. Tu PSP debe permitir IVA por línea de detalle, no global por factura.</p>
+    <p><strong>2. Retenciones para clientes especiales.</strong> Cuando vendes a una entidad pública o gran contribuyente, el comprador retiene IVA y/o renta. La factura debe reflejar esa retención correctamente — sin esto el cliente rechaza la factura.</p>
+    <p><strong>3. ICA por municipio.</strong> Si vendes en Bogotá, Medellín o Cali, aplica ICA. Las tarifas varían por municipio y por actividad económica (CIIU). Cosmética está en CIIU 2023 (fabricación) o 4773 (comercio). Configura la matriz municipal en tu PSP.</p>
+    <p><strong>4. Notas crédito por devolución.</strong> En cosmética las devoluciones por vencimiento, daño en transporte o no-conformidad regulatoria son frecuentes. La nota crédito electrónica tiene su propio CUFE y debe relacionar la factura original.</p>
+    <p><strong>5. Facturación a clientes B2B con NIT.</strong> Cuando facturas a otra empresa, el NIT del comprador debe estar verificado contra DIAN antes de timbrar. PSPs serios validan automáticamente. Sin esto, factura rechazada por DIAN tras emitida.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">Integración con ERP</span>
+    <h2>Cómo se conecta con tu sistema operativo.</h2>
+    <p>El flujo ideal es:</p>
+    <ol>
+      <li>Tu equipo crea la factura en el ERP (con cliente, productos, precios, IVA, retenciones calculados automáticamente).</li>
+      <li>El ERP llama el endpoint del PSP vía API REST con el JSON/XML de la factura.</li>
+      <li>El PSP timbra con DIAN y devuelve el CUFE + URL del XML.</li>
+      <li>El ERP guarda el CUFE en la factura, marca estado "Timbrada", genera PDF con CUFE visible.</li>
+      <li>El ERP envía PDF + XML al cliente por email automáticamente.</li>
+      <li>Si el PSP responde error (NIT inválido, retención mal calculada, código DIAN rechazado), la factura queda en estado "Pendiente Timbrado" con el motivo. Tu equipo corrige y reintenta sin re-digitar.</li>
+    </ol>
+    <p>La integración promedio toma 2-4 semanas de trabajo si el ERP no la trae nativa. EOS la incluye nativa con cualquiera de los 4 PSPs listados — sin add-on, sin proyecto adicional.</p>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Sanciones</span>
+    <h2>Qué pasa si no cumples.</h2>
+    <p>La DIAN tiene capacidad sancionatoria fuerte sobre facturación electrónica:</p>
+    <ul>
+      <li><strong>No facturar electrónicamente</strong> cuando estás obligado: sanciones desde 1% del valor no facturado, hasta cierre del establecimiento por 3 días.</li>
+      <li><strong>Facturar fuera de plazo (sin timbrado en tiempo real)</strong>: 1% del valor con tope.</li>
+      <li><strong>Información falsa en factura</strong> (NIT incorrecto, valores adulterados): sanciones penales además de tributarias.</li>
+      <li><strong>No conservar el XML 5 años</strong>: 0.5% del valor por documento extraviado.</li>
+    </ul>
+    <p>Los PSPs autorizados manejan automáticamente la conservación 5 años obligatoria — ese ya no es problema tuyo si trabajas con uno serio.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">Cómo escoger</span>
+    <h2>Decisión ejecutiva en 5 preguntas.</h2>
+    <ol>
+      <li><strong>¿Cuántas facturas emites por mes?</strong> Si menos de 50 → FacturaTech. Si 50-500 → Carvajal o The Factory HKA. Si ya usas Siigo y son menos de 200 → Siigo integrado.</li>
+      <li><strong>¿Tu ERP tiene integración nativa con algún PSP?</strong> Si sí, escoge ese — ahorras 4-8 semanas de implementación.</li>
+      <li><strong>¿Necesitas integración con cliente especial</strong> (Falabella, La Riviera, droguerías Cafam con EDI específico)? Carvajal y HKA tienen más conectores.</li>
+      <li><strong>¿Qué nivel de soporte requieres?</strong> Si tu contadora externa va a manejarlo: Siigo (familiar). Si tu equipo interno lo gestiona: cualquiera.</li>
+      <li><strong>¿Cuál es tu presupuesto?</strong> Negocia. Los precios de mostrador son altos; los precios negociados con volumen anual pre-pagado bajan 30-50%.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="bg-pale">
+  <div class="container container-narrow">
+    <span class="eyebrow">Perspectiva 2026-2027</span>
+    <h2>Qué viene de la DIAN.</h2>
+    <p>La DIAN tiene un roadmap activo de digitalización tributaria que afectará a cosmética:</p>
+    <ul>
+      <li><strong>RADIAN</strong> (Registro de Facturas Electrónicas como Título Valor) — permite financiar facturas en plataformas de factoring digital. Acelera tu flujo de caja.</li>
+      <li><strong>Documento soporte electrónico expandido</strong> — más tipos de documentos requerirán timbrado.</li>
+      <li><strong>Nómina electrónica obligatoria</strong> ya está vigente. Tu PSP probablemente la incluya.</li>
+      <li><strong>Trazabilidad de obligaciones cambiarias</strong> y reportes de medios magnéticos cada vez más automatizados.</li>
+    </ul>
+    <p>Escoge un PSP con roadmap activo, no uno que se quedó en la versión 1.0.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-band">
+      <h2>EOS integra facturación electrónica DIAN nativa.</h2>
+      <p>Sin add-ons. Sin proyecto adicional. CUFE generado en el momento de emitir la factura, PDF + XML enviados al cliente automáticamente, conciliación contra OC integrada.</p>
+      <a href="/demo.html" class="btn btn-aurora btn-lg">Solicitar demo</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Recursos relacionados</span>
+    <h2>Sigue leyendo.</h2>
+    <div class="cards" style="margin-top:24px">
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px"><a href="/recursos/excel-vs-erp-cosmetico.html" style="color:var(--eos-text)">Excel vs ERP cosmético</a></h3>
+        <p style="font-size:14px;line-height:1.55;margin:0;color:var(--eos-text-soft)">Análisis del costo real de seguir operando un laboratorio en Excel + WhatsApp.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px"><a href="/recursos/guia-cumplimiento-invima.html" style="color:var(--eos-text)">Guía cumplimiento INVIMA</a></h3>
+        <p style="font-size:14px;line-height:1.55;margin:0;color:var(--eos-text-soft)">Resolución 2214, BPM, SOPs, trazabilidad, registros sanitarios.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px"><a href="/casos/hha-group.html" style="color:var(--eos-text)">Caso HHA Group</a></h3>
+        <p style="font-size:14px;line-height:1.55;margin:0;color:var(--eos-text-soft)">Espagiria + ÁNIMUS Lab operando con EOS desde 2025.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round"><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/><path d="M5 19 Q 16 17, 27 19" stroke-width="1.5" opacity=".55"/><path d="M5 23 Q 16 21, 27 23" stroke-width="1.5" opacity=".25"/></svg></div>
+        <div class="footer__brand-name">EOS</div>
+        <div class="footer__tagline">Operar claro.</div>
+      </div>
+      <div><h5>Producto</h5><ul><li><a href="/producto.html">Capacidades</a></li><li><a href="/precios.html">Precios</a></li><li><a href="/demo.html">Demo</a></li><li><a href="/casos/hha-group.html">Casos</a></li></ul></div>
+      <div><h5>Industrias</h5><ul><li><a href="/industrias/laboratorios-cosmeticos.html">Cosméticos</a></li><li><a href="/industrias/farmaceuticos.html">Farma</a></li><li><a href="/industrias/maquila-cosmetica.html">Maquila</a></li><li><a href="/industrias/marcas-dtc-shopify.html">DTC</a></li></ul></div>
+      <div><h5>Confianza</h5><ul><li><a href="/seguridad.html">Seguridad</a></li><li><a href="/status.html">Status</a></li><li><a href="/changelog.html">Changelog</a></li><li><a href="/privacidad.html">Privacidad</a></li></ul></div>
+    </div>
+    <div class="footer__base">
+      <div>© 2026 HHA Group S.A.S. — Bogotá, Colombia</div>
+      <div><a href="/privacidad.html">Privacidad</a> · <a href="/terminos.html">Términos</a> · <a href="/contacto.html">Contacto</a></div>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+</body></html>
