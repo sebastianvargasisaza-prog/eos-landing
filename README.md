@@ -71,9 +71,9 @@ python -m http.server 8765
    - Click "Save and Deploy"
    - Espera 30 segundos. Ya está al aire en `eos-landing.pages.dev`
 
-3. **Conecta dominio `eoshq.com`**
+3. **Conecta dominio `eossuite.com`**
    - Compra el dominio en Cloudflare Registrar (~$10 USD/año)
-   - En Pages → Custom Domains → "Set up a custom domain" → `eoshq.com` y `www.eoshq.com`
+   - En Pages → Custom Domains → "Set up a custom domain" → `eossuite.com` y `www.eossuite.com`
    - Cloudflare configura DNS automáticamente
    - HTTPS automático en 60 segundos
 
@@ -88,7 +88,7 @@ El form en `/demo.html` apunta a Web3Forms (gratis, sin cuenta). Para activarlo:
 
 ## SEO checklist post-deploy
 
-- [ ] Submit `https://eoshq.com/sitemap.xml` a Google Search Console
+- [ ] Submit `https://eossuite.com/sitemap.xml` a Google Search Console
 - [ ] Submit a Bing Webmaster Tools
 - [ ] Verificar Open Graph en https://www.opengraph.xyz/
 - [ ] Verificar structured data en https://search.google.com/test/rich-results
