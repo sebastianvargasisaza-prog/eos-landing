@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Status · Disponibilidad de EOS en producción | EOS</title>
+<meta name="description" content="Estado en tiempo real de la plataforma EOS: API, panel, base de datos, infraestructura. Histórico de incidentes y uptime SLA por plan.">
+<meta name="keywords" content="status EOS, uptime EOS, incidentes EOS, SLA ERP cosmético">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://eossuite.com/status.html">
+<meta name="theme-color" content="#6d28d9">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Status público de EOS">
+<meta property="og:description" content="Disponibilidad en tiempo real, histórico de incidentes y SLA por plan.">
+<meta property="og:url" content="https://eossuite.com/status.html">
+<meta property="og:image" content="https://eossuite.com/assets/img/og.png">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="stylesheet" href="/assets/css/eos.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__brand"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round"><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/><path d="M5 19 Q 16 17, 27 19" stroke-width="1.5" opacity=".55"/><path d="M5 23 Q 16 21, 27 23" stroke-width="1.5" opacity=".25"/></svg><span>EOS</span></a>
+    <button class="nav__menu-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <div class="nav__links">
+      <a href="/producto.html">Producto</a>
+      <a href="/precios.html">Precios</a>
+      <a href="/sobre.html">Sobre</a>
+      <a href="/casos/hha-group.html">Casos</a>
+      <a href="/recursos/guia-cumplimiento-invima.html">Recursos</a>
+      <a href="/demo.html" class="btn btn-primary btn-sm">Solicitar demo</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding:96px 0 56px">
+  <div class="container">
+    <div class="hero__inner">
+      <span class="hero__eyebrow">Status</span>
+      <h1>Todos los sistemas <span style="color:#16a34a">operativos</span>.</h1>
+      <p class="lead">Última verificación: <strong id="last-check">29 de abril de 2026, 22:30 COT</strong>. Esta página resume el estado público y el histórico reciente de la plataforma EOS.</p>
+      <p class="muted" style="font-size:13px">Status page automatizado en migración a Instatus. Mientras tanto, esta página se actualiza manualmente con cada release y cada incidente.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">Estado actual</span>
+    <h2>Componentes monitoreados.</h2>
+    <div class="cards" style="margin-top:24px">
+      <div class="card" style="border-left:4px solid #16a34a">
+        <h3 style="margin:0 0 4px;font-size:18px">API REST</h3>
+        <p class="muted" style="font-size:13px;margin:0 0 8px">+377 endpoints públicos</p>
+        <p style="font-size:14px;color:#16a34a;font-weight:600;margin:0">● Operativo</p>
+      </div>
+      <div class="card" style="border-left:4px solid #16a34a">
+        <h3 style="margin:0 0 4px;font-size:18px">Panel Web</h3>
+        <p class="muted" style="font-size:13px;margin:0 0 8px">Interfaz de operación</p>
+        <p style="font-size:14px;color:#16a34a;font-weight:600;margin:0">● Operativo</p>
+      </div>
+      <div class="card" style="border-left:4px solid #16a34a">
+        <h3 style="margin:0 0 4px;font-size:18px">Base de datos</h3>
+        <p class="muted" style="font-size:13px;margin:0 0 8px">PostgreSQL gestionada</p>
+        <p style="font-size:14px;color:#16a34a;font-weight:600;margin:0">● Operativo</p>
+      </div>
+      <div class="card" style="border-left:4px solid #16a34a">
+        <h3 style="margin:0 0 4px;font-size:18px">Backups automáticos</h3>
+        <p class="muted" style="font-size:13px;margin:0 0 8px">Snapshot diario · 30 días retención</p>
+        <p style="font-size:14px;color:#16a34a;font-weight:600;margin:0">● Operativo</p>
+      </div>
+      <div class="card" style="border-left:4px solid #16a34a">
+        <h3 style="margin:0 0 4px;font-size:18px">Notificaciones email</h3>
+        <p class="muted" style="font-size:13px;margin:0 0 8px">Alertas, reportes, RACI</p>
+        <p style="font-size:14px;color:#16a34a;font-weight:600;margin:0">● Operativo</p>
+      </div>
+      <div class="card" style="border-left:4px solid #16a34a">
+        <h3 style="margin:0 0 4px;font-size:18px">Sitio público (eossuite.com)</h3>
+        <p class="muted" style="font-size:13px;margin:0 0 8px">Cloudflare Pages</p>
+        <p style="font-size:14px;color:#16a34a;font-weight:600;margin:0">● Operativo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Uptime últimos 6 meses</span>
+    <h2>El histórico real, no marketing.</h2>
+    <table style="width:100%;border-collapse:collapse;margin-top:16px">
+      <thead>
+        <tr style="border-bottom:2px solid var(--eos-border)">
+          <th style="text-align:left;padding:12px 8px;font-size:14px">Mes</th>
+          <th style="text-align:left;padding:12px 8px;font-size:14px">Uptime</th>
+          <th style="text-align:left;padding:12px 8px;font-size:14px">Incidentes críticos</th>
+          <th style="text-align:left;padding:12px 8px;font-size:14px">Notas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Abril 2026</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#16a34a"><strong>100%</strong></td>
+          <td style="padding:12px 8px;font-size:14px">0</td>
+          <td style="padding:12px 8px;font-size:14px;color:var(--eos-text-soft)">Sin downtime. 12 releases sin incidentes.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Marzo 2026</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#16a34a"><strong>99.97%</strong></td>
+          <td style="padding:12px 8px;font-size:14px">0</td>
+          <td style="padding:12px 8px;font-size:14px;color:var(--eos-text-soft)">~13 min mantenimiento programado en madrugada.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Febrero 2026</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#16a34a"><strong>100%</strong></td>
+          <td style="padding:12px 8px;font-size:14px">0</td>
+          <td style="padding:12px 8px;font-size:14px;color:var(--eos-text-soft)">Auditoría INVIMA sin observaciones. 0 caídas.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Enero 2026</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#16a34a"><strong>99.99%</strong></td>
+          <td style="padding:12px 8px;font-size:14px">0</td>
+          <td style="padding:12px 8px;font-size:14px;color:var(--eos-text-soft)">~4 min reinicio post-deploy.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Diciembre 2025</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#16a34a"><strong>99.95%</strong></td>
+          <td style="padding:12px 8px;font-size:14px">0</td>
+          <td style="padding:12px 8px;font-size:14px;color:var(--eos-text-soft)">~22 min mantenimiento programado.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Noviembre 2025</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#16a34a"><strong>100%</strong></td>
+          <td style="padding:12px 8px;font-size:14px">0</td>
+          <td style="padding:12px 8px;font-size:14px;color:var(--eos-text-soft)">Sin downtime.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="muted" style="font-size:13px;margin-top:24px"><strong>Honestidad importante:</strong> el histórico hasta abril de 2026 corresponde a la operación interna en HHA Group (Espagiria + ÁNIMUS Lab) — la única instancia productiva de EOS hasta hoy. A partir del onboarding multi-tenant publicaremos uptime por instancia.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">SLA por plan</span>
+    <h2>Compromiso contractual.</h2>
+    <table style="width:100%;border-collapse:collapse;margin-top:16px">
+      <thead>
+        <tr style="border-bottom:2px solid var(--eos-border)">
+          <th style="text-align:left;padding:12px 8px;font-size:14px">Plan</th>
+          <th style="text-align:left;padding:12px 8px;font-size:14px">Uptime garantizado</th>
+          <th style="text-align:left;padding:12px 8px;font-size:14px">Tiempo primera respuesta</th>
+          <th style="text-align:left;padding:12px 8px;font-size:14px">Créditos por incumplimiento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Starter</strong></td>
+          <td style="padding:12px 8px;font-size:14px">Best-effort</td>
+          <td style="padding:12px 8px;font-size:14px">48 h hábiles</td>
+          <td style="padding:12px 8px;font-size:14px;color:var(--eos-text-soft)">No aplica</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Pro</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#16a34a"><strong>99% mensual</strong></td>
+          <td style="padding:12px 8px;font-size:14px">8 h hábiles</td>
+          <td style="padding:12px 8px;font-size:14px">Crédito proporcional al downtime</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Enterprise</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#16a34a"><strong>99.9% mensual</strong></td>
+          <td style="padding:12px 8px;font-size:14px">2 h (P1) / 4 h (P2)</td>
+          <td style="padding:12px 8px;font-size:14px">10% mes por cada 0.1% bajo SLA</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Cuando algo falla</span>
+    <h2>Cómo manejamos incidentes.</h2>
+    <ul>
+      <li><strong>Detección:</strong> monitoreo Sentry 24/7 + healthchecks automatizados cada 60 segundos.</li>
+      <li><strong>Triage:</strong> el incidente se clasifica como P1 (crítico, afecta operación), P2 (mayor, degradación parcial) o P3 (menor, cosmético).</li>
+      <li><strong>Comunicación:</strong> los clientes Pro y Enterprise reciben notificación dentro del SLA correspondiente. Esta página se actualiza con el estado.</li>
+      <li><strong>Resolución:</strong> RTO objetivo 4 h, RPO 24 h. Backup point inmediatamente disponible para restauración.</li>
+      <li><strong>Postmortem:</strong> tras un P1, publicamos análisis post-incidente en este changelog en máximo 5 días hábiles. Aprendizaje + acción correctiva, sin culpa.</li>
+    </ul>
+    <p style="margin-top:24px">Si tienes una incidencia en curso, escríbenos a <a href="mailto:soporte@eossuite.com">soporte@eossuite.com</a>. Para reportar problemas de seguridad: <a href="mailto:security@eossuite.com">security@eossuite.com</a>.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round"><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/><path d="M5 19 Q 16 17, 27 19" stroke-width="1.5" opacity=".55"/><path d="M5 23 Q 16 21, 27 23" stroke-width="1.5" opacity=".25"/></svg></div>
+        <div class="footer__brand-name">EOS</div>
+        <div class="footer__tagline">Operar claro.</div>
+      </div>
+      <div><h5>Producto</h5><ul><li><a href="/producto.html">Capacidades</a></li><li><a href="/precios.html">Precios</a></li><li><a href="/demo.html">Demo</a></li><li><a href="/casos/hha-group.html">Casos</a></li></ul></div>
+      <div><h5>Confianza</h5><ul><li><a href="/seguridad.html">Seguridad</a></li><li><a href="/status.html">Status</a></li><li><a href="/changelog.html">Changelog</a></li><li><a href="/privacidad.html">Privacidad</a></li></ul></div>
+      <div><h5>Empresa</h5><ul><li><a href="/sobre.html">Sobre EOS</a></li><li><a href="/contacto.html">Contacto</a></li><li><a href="/terminos.html">Términos</a></li></ul></div>
+    </div>
+    <div class="footer__base">
+      <div>© 2026 HHA Group S.A.S. — Bogotá, Colombia</div>
+      <div><a href="/privacidad.html">Privacidad</a> · <a href="/terminos.html">Términos</a> · <a href="/contacto.html">Contacto</a></div>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+</body></html>

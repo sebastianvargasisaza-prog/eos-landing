@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seguridad &amp; arquitectura · EOS para laboratorios | EOS</title>
+<meta name="description" content="Cómo EOS protege tus datos: HTTPS obligatorio, backups diarios cifrados, audit log inmutable, aislamiento por tenant, exportabilidad total, monitoreo Sentry. Construido bajo principios de Confianza Cero.">
+<meta name="keywords" content="seguridad EOS, arquitectura EOS, multi-tenant, backups, exportabilidad de datos, RTO RPO ERP cosmético">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://eossuite.com/seguridad.html">
+<meta name="theme-color" content="#6d28d9">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Seguridad &amp; arquitectura de EOS">
+<meta property="og:description" content="Cómo protegemos los datos de tu laboratorio: cifrado, backups, audit log, aislamiento por tenant, portabilidad total.">
+<meta property="og:url" content="https://eossuite.com/seguridad.html">
+<meta property="og:image" content="https://eossuite.com/assets/img/og.png">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="stylesheet" href="/assets/css/eos.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__brand"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round"><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/><path d="M5 19 Q 16 17, 27 19" stroke-width="1.5" opacity=".55"/><path d="M5 23 Q 16 21, 27 23" stroke-width="1.5" opacity=".25"/></svg><span>EOS</span></a>
+    <button class="nav__menu-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <div class="nav__links">
+      <a href="/producto.html">Producto</a>
+      <a href="/precios.html">Precios</a>
+      <a href="/sobre.html">Sobre</a>
+      <a href="/casos/hha-group.html">Casos</a>
+      <a href="/recursos/guia-cumplimiento-invima.html">Recursos</a>
+      <a href="/demo.html" class="btn btn-primary btn-sm">Solicitar demo</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding:96px 0 56px">
+  <div class="container">
+    <div class="hero__inner">
+      <span class="hero__eyebrow">Seguridad &amp; arquitectura</span>
+      <h1>Tus datos son tuyos.<br>Y los protegemos como tales.</h1>
+      <p class="lead">Un laboratorio cosmético INVIMA-regulado no puede permitirse perder trazabilidad de lotes, fórmulas o registros sanitarios. Estos son los compromisos técnicos y operativos que asumimos para que confiar en EOS sea una decisión informada, no un acto de fe.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">Compromisos en una página</span>
+    <h2>Lo esencial.</h2>
+    <div class="cards" style="margin-top:24px">
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">HTTPS obligatorio</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">TLS 1.3 en todo el tráfico, certificado gestionado por Cloudflare, HSTS habilitado. No hay puerto 80 abierto.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">Cifrado en reposo</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">Base de datos y backups cifrados con AES-256. Passwords con hash bcrypt (cost factor 12).</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">Backups diarios</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">Snapshot diario automático con retención de 30 días. Restauración probada mensualmente.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">Audit log inmutable</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">Cada acción crítica (crear, editar, borrar) queda registrada con usuario, IP, timestamp y diff. No editable.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">Acceso por roles (RBAC)</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">12+ roles configurables. Cada usuario ve solo lo que su rol permite. Visibilidad granular por módulo.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">CSRF, rate limiting, CSP</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">Tokens CSRF en formularios, rate limit por IP en login, Content Security Policy estricta en cabeceras HTTP.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Aislamiento de datos</span>
+    <h2>Tu laboratorio nunca ve el de otro.</h2>
+    <p class="lead">Esta es la pregunta más importante que cualquier comprador serio nos hace. La respondemos sin metáforas.</p>
+    <p>EOS está construido bajo arquitectura multi-tenant con <strong><code>tenant_id</code> en cada tabla relevante</strong>. Toda consulta SQL pasa por una capa de scope que filtra por tenant antes de tocar la base de datos. No es un acuerdo: es un constraint del código.</p>
+    <p>Adicionalmente, los empleados de Espagiria Laboratorios y ÁNIMUS Lab <strong>no tienen acceso técnico ni operativo a los datos de otros clientes EOS</strong>. Solo el equipo de plataforma (tú lo conoces: Sebastián, Alejandro, futuros ingenieros) tiene acceso a infraestructura, y siempre bajo audit log.</p>
+    <p>Como cliente Enterprise puedes solicitar:</p>
+    <ul>
+      <li>Aislamiento de base de datos (instancia dedicada, no compartida).</li>
+      <li>Auditoría externa de penetration testing antes de firmar.</li>
+      <li>Acuerdo de no-uso de datos con penalidad económica explícita.</li>
+      <li>Designación de un Data Protection Officer (DPO) interno tuyo con acceso a logs.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">Continuidad del negocio</span>
+    <h2>Qué pasa si EOS desaparece.</h2>
+    <p class="lead">La pregunta correcta. La respondemos así:</p>
+    <div class="cards" style="margin-top:24px">
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">Exportabilidad total</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">En cualquier momento puedes exportar TODOS tus datos (CSV/Excel/SQL/PDF). No retenemos información. Si decides irte, te vas con todo en máximo 15 días hábiles desde la solicitud.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">Escrow de código (Enterprise)</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">Para clientes Enterprise: ofrecemos depósito notarial del código fuente con un tercero. Si HHA Group cesara operaciones, el cliente accede al código bajo licencia de continuidad.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">RTO 4h · RPO 24h</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">Recovery Time Objective de 4 horas y Recovery Point Objective de 24 horas. Probado en ejercicios de restauración trimestrales.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">Sin lock-in de formato</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">Datos en estándares abiertos (CSV, SQL ANSI, JSON). Fórmulas exportables a Excel. Documentos en PDF. Cualquier ERP serio puede importar lo que sale de EOS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Cumplimiento</span>
+    <h2>Marco normativo.</h2>
+    <table style="width:100%;border-collapse:collapse;margin-top:16px">
+      <thead>
+        <tr style="border-bottom:2px solid var(--eos-border)">
+          <th style="text-align:left;padding:12px 8px;font-size:14px">Norma / Estándar</th>
+          <th style="text-align:left;padding:12px 8px;font-size:14px">Estado</th>
+          <th style="text-align:left;padding:12px 8px;font-size:14px">Detalle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Ley 1581 / Decreto 1377 (Habeas Data)</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#16a34a"><strong>✓ Vigente</strong></td>
+          <td style="padding:12px 8px;font-size:14px">Política de privacidad publicada, derechos ARCO operativos, correo <a href="mailto:privacidad@eossuite.com">privacidad@eossuite.com</a>.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Resolución 2214/2013 INVIMA</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#16a34a"><strong>✓ Soportado</strong></td>
+          <td style="padding:12px 8px;font-size:14px">Trazabilidad por lote, versionado de fórmulas, registros sanitarios. Validado en auditoría INVIMA febrero 2026 (Espagiria).</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Decisión Andina 516</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#16a34a"><strong>✓ Soportado</strong></td>
+          <td style="padding:12px 8px;font-size:14px">Notificación sanitaria obligatoria, INCI, advertencias y precauciones, vencimientos.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>Registro Nacional de Bases de Datos (RNBD-SIC)</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#d97706"><strong>○ En registro</strong></td>
+          <td style="padding:12px 8px;font-size:14px">Inscripción en proceso ante la Superintendencia de Industria y Comercio.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>ISO 27001</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#d97706"><strong>○ Roadmap 2026-2027</strong></td>
+          <td style="padding:12px 8px;font-size:14px">Iniciamos preparación de ISMS (Information Security Management System) en Q3 2026.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>SOC 2 Type I</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#d97706"><strong>○ Roadmap 2027</strong></td>
+          <td style="padding:12px 8px;font-size:14px">Reservado para clientes Enterprise. Auditoría con firma reconocida en Q1 2027.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--eos-border)">
+          <td style="padding:12px 8px;font-size:14px"><strong>IQ/OQ/PQ (validación de software)</strong></td>
+          <td style="padding:12px 8px;font-size:14px;color:#d97706"><strong>○ En documentación</strong></td>
+          <td style="padding:12px 8px;font-size:14px">Estándar GxP para software regulado. Plantillas de Installation/Operational/Performance Qualification disponibles para clientes Pro y Enterprise.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="muted" style="font-size:13px;margin-top:24px"><strong>Honestidad importante:</strong> distinguimos entre lo que ya implementamos y lo que está en roadmap. No vendemos certificaciones que no tenemos. Si tu compra exige un control que aún no entregamos, te lo decimos antes de firmar.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container container-narrow">
+    <span class="eyebrow">Infraestructura</span>
+    <h2>Sobre qué corre EOS.</h2>
+    <div class="cards" style="margin-top:24px">
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">Render</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">Plataforma de cómputo gestionada con SLA 99.95%. Auto-scaling, despliegue continuo desde Git, certificados TLS automáticos.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">Cloudflare</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">CDN, WAF (Web Application Firewall), protección DDoS. La capa pública del sitio nunca toca directamente al servidor de aplicaciones.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">Sentry</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">Monitoreo de errores en producción 24/7. Cada excepción genera alerta. Tiempo de respuesta a incidentes en menos de una hora.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;font-size:18px">GitHub Actions</h3>
+        <p style="font-size:14px;line-height:1.55;margin:0">CI/CD automatizado. Cada commit ejecuta suite de tests (unitarios + integración) antes de merge. Branch protection en main.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-alt">
+  <div class="container container-narrow">
+    <span class="eyebrow">Reportar vulnerabilidades</span>
+    <h2>Si encuentras algo, dinos.</h2>
+    <p>Si descubres una vulnerabilidad de seguridad, escríbenos a <a href="mailto:security@eossuite.com">security@eossuite.com</a>. Respondemos en máximo 48 horas hábiles. No tomamos represalias contra investigadores que reporten responsablemente. Estamos definiendo programa formal de bug bounty para 2027.</p>
+    <p>Para preguntas comerciales sobre seguridad y revisiones de due diligence: <a href="mailto:hola@eossuite.com">hola@eossuite.com</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-band">
+      <h2>¿Necesitas un cuestionario de seguridad detallado?</h2>
+      <p>Tenemos plantilla pre-rellenada (CAIQ-Lite, SIG-Lite). Solicítala en la demo y la enviamos en 24 horas.</p>
+      <a href="/demo.html" class="btn btn-aurora btn-lg">Solicitar demo</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round"><circle cx="16" cy="12" r="3" fill="currentColor" stroke="none"/><path d="M5 19 Q 16 17, 27 19" stroke-width="1.5" opacity=".55"/><path d="M5 23 Q 16 21, 27 23" stroke-width="1.5" opacity=".25"/></svg></div>
+        <div class="footer__brand-name">EOS</div>
+        <div class="footer__tagline">Operar claro.</div>
+      </div>
+      <div><h5>Producto</h5><ul><li><a href="/producto.html">Capacidades</a></li><li><a href="/precios.html">Precios</a></li><li><a href="/demo.html">Demo</a></li><li><a href="/casos/hha-group.html">Casos</a></li></ul></div>
+      <div><h5>Confianza</h5><ul><li><a href="/seguridad.html">Seguridad</a></li><li><a href="/status.html">Status</a></li><li><a href="/changelog.html">Changelog</a></li><li><a href="/privacidad.html">Privacidad</a></li></ul></div>
+      <div><h5>Empresa</h5><ul><li><a href="/sobre.html">Sobre EOS</a></li><li><a href="/contacto.html">Contacto</a></li><li><a href="/terminos.html">Términos</a></li></ul></div>
+    </div>
+    <div class="footer__base">
+      <div>© 2026 HHA Group S.A.S. — Bogotá, Colombia</div>
+      <div><a href="/privacidad.html">Privacidad</a> · <a href="/terminos.html">Términos</a> · <a href="/contacto.html">Contacto</a></div>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+</body></html>
