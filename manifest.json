@@ -1,0 +1,16 @@
+{
+  "name": "EOS · Operar claro",
+  "short_name": "EOS",
+  "description": "Sistema operativo para laboratorios cosméticos y farmacéuticos. by HHA Group.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#6d28d9",
+  "background_color": "#f5f4f0",
+  "categories": ["business", "productivity", "medical"],
+  "lang": "es-CO",
+  "icons": [
+    {"src": "/assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}
