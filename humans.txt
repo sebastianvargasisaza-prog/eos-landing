@@ -1,0 +1,29 @@
+/* TEAM */
+
+CEO & co-fundador: Sebastián Vargas Isaza, MD MPH
+Co-fundador: Alejandro Morales
+Empresa: HHA Group S.A.S.
+Ubicación: Bogotá, Colombia
+Sitio: https://hhagroup.co
+Producto: https://eossuite.com
+
+/* THANKS */
+
+A nuestro equipo en Espagiria Laboratorios y ÁNIMUS Lab —
+ustedes son la razón por la que EOS existe.
+
+A los laboratorios cosméticos colombianos que cargaron Excel
+durante años esperando algo mejor.
+
+/* SITE */
+
+Last update: 2026-04-29
+Standards: HTML5, CSS3, ES2015+
+Components: Vanilla — sin frameworks JS innecesarios
+Hosting: Cloudflare Pages
+Domain: Cloudflare Registrar
+Software: Construido con Claude Code
+
+/* PHILOSOPHY */
+
+Operar claro.

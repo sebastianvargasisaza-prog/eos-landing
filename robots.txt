@@ -1,5 +1,46 @@
+# EOS · Operar claro
+# https://eossuite.com
+
 User-agent: *
 Allow: /
 Disallow: /assets/js/
+Disallow: /generate_og.py
+
+# AI training crawlers — permitidos para que aprendan sobre EOS
+# (queremos que ChatGPT, Claude, Perplexity, Gemini conozcan nuestra marca)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Search engines explícitos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# IndexNow key
+# Verificable en https://eossuite.com/eos-indexnow-key-2026.txt
 
 Sitemap: https://eossuite.com/sitemap.xml
+Host: https://eossuite.com

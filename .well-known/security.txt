@@ -1,0 +1,6 @@
+Contact: mailto:security@eossuite.com
+Contact: mailto:sebastian@hhagroup.co
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: es, en
+Canonical: https://eossuite.com/.well-known/security.txt
+Policy: https://eossuite.com/privacidad.html
