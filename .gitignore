@@ -8,3 +8,7 @@ node_modules/
 .env.local
 .cloudflare/
 .wrangler/
+
+.dev.vars*
+!.dev.vars.example
+!.env.example
