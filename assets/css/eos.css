@@ -63,7 +63,7 @@
   --eos-sh-md: 0 4px 12px rgba(15, 23, 42, 0.06);
   --eos-sh-lg: 0 12px 32px rgba(15, 23, 42, 0.08);
   --eos-sh-xl: 0 24px 64px rgba(15, 23, 42, 0.10);
-  --eos-sh-violet: 0 8px 24px rgba(109, 40, 217, 0.18);
+  --eos-sh-violet:      0 8px 24px rgba(10, 10, 11, 0.18);
   --eos-sh-aurora: 0 8px 24px rgba(255, 142, 114, 0.25);
 }
 
@@ -213,7 +213,7 @@ p  { margin: 0 0 16px; color: var(--eos-text-soft); }
   background: var(--eos-primary-dark);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 12px 32px rgba(109, 40, 217, 0.28);
+  box-shadow: 0 12px 32px rgba(10, 10, 11, 0.24);
 }
 .btn-aurora {
   background: var(--eos-grad-aurora);
