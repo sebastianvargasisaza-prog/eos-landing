@@ -7,18 +7,18 @@
 
 :root {
   /* Paleta EOS oficial */
-  --eos-primary:        #6d28d9;
-  --eos-primary-light:  #a78bfa;
-  --eos-primary-dark:   #4c1d95;
-  --eos-primary-deep:   #1e1b4b;
-  --eos-primary-pale:   #f5f3ff;
+  --eos-primary:        #16192B;
+  --eos-primary-light:  #3C4260;
+  --eos-primary-dark:   #0A0A0B;
+  --eos-primary-deep:   #0A0A0B;
+  --eos-primary-pale:   #F2F2F5;
   --eos-aurora:         #FF8E72;
   --eos-aurora-pale:    #fff4ef;
   --eos-gold:           #FFCB77;
   --eos-night:          #0A0A0B;
   --eos-grad-aurora:    linear-gradient(135deg, #FF8E72 0%, #FFCB77 100%);
-  --eos-grad-night:     linear-gradient(135deg, #1e1b4b 0%, #6d28d9 100%);
-  --eos-grad-dawn:      linear-gradient(180deg, #1e1b4b 0%, #4c1d95 40%, #FF8E72 100%);
+  --eos-grad-night:     linear-gradient(135deg, #0A0A0B 0%, #232845 100%);
+  --eos-grad-dawn:      linear-gradient(180deg, #0A0A0B 0%, #16192B 55%, #2A2036 100%);
 
   /* Neutrales warm */
   --eos-bg:             #f5f4f0;
