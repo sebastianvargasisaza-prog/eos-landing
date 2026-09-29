@@ -640,3 +640,127 @@ details p { margin: 12px 0 0; color: var(--eos-text-mute); font-size: 15px; }
 @media print {
   .nav, .hero__cta, .cta-band, .footer { display: none; }
 }
+
+/* ============================================================
+   Hero de la cadena · 29-sep-2026
+   Paleta del brand sheet EOS: noche, azul, dorado, coral.
+   El dorado solo marca el eslabón del lote. El coral solo alerta.
+   ============================================================ */
+.hero--cadena{
+  --c-noche:#0A0A0B;
+  --c-azul:#131A2A;
+  --c-linea:rgba(250,250,250,.14);
+  --c-texto:#FAFAFA;
+  --c-suave:rgba(250,250,250,.62);
+  --c-dorado:#FFCB77;
+  --c-coral:#FF8E72;
+  position:relative;
+  padding:clamp(56px,9vw,112px) 0 clamp(48px,7vw,88px);
+  background:var(--c-noche);
+  color:var(--c-texto);
+  overflow:hidden;
+}
+.hero--cadena::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(90% 60% at 12% 0%, rgba(255,203,119,.10) 0%, transparent 62%);
+}
+.hero--cadena .container{position:relative;z-index:1}
+
+.cadena__grid{
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(32px,5vw,72px);align-items:start;
+}
+.cadena__texto{max-width:40ch}
+
+.hero--cadena h1{
+  color:var(--c-texto);
+  font-size:clamp(38px,5vw,66px);
+  font-weight:600;
+  letter-spacing:-.035em;
+  line-height:.98;
+  margin:0 0 20px;
+}
+.cadena__sub{
+  color:var(--c-suave);
+  font-size:clamp(16px,1.35vw,19px);
+  line-height:1.6;
+  max-width:46ch;
+  margin:0 0 30px;
+}
+
+.cadena__cta{display:flex;gap:10px;flex-wrap:wrap}
+.cadena__btn{
+  display:inline-block;padding:13px 22px;border-radius:8px;
+  font-size:15px;font-weight:500;text-decoration:none;
+  border:1px solid var(--c-linea);color:var(--c-texto);
+  transition:border-color .15s ease, background-color .15s ease;
+}
+.cadena__btn:hover{border-color:rgba(250,250,250,.4)}
+.cadena__btn--fuerte{background:var(--c-texto);color:var(--c-noche);border-color:var(--c-texto)}
+.cadena__btn--fuerte:hover{background:#fff;border-color:#fff}
+.cadena__btn:focus-visible{outline:2px solid var(--c-dorado);outline-offset:3px}
+
+.cadena__datos{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);
+  margin:44px 0 0;padding:26px 0 0;border-top:1px solid var(--c-linea);
+}
+.cadena__datos div{min-width:0}
+.cadena__datos dt{font-size:22px;font-weight:600;letter-spacing:-.02em;color:var(--c-texto);white-space:nowrap}
+.cadena__datos dd{margin:5px 0 0;font-size:12.5px;line-height:1.4;color:var(--c-suave)}
+
+/* Panel de la cadena */
+.cadena__panel{
+  margin:0;padding:26px 28px 30px;
+  background:var(--c-azul);
+  border:1px solid var(--c-linea);
+  border-radius:14px;
+}
+.cadena__panel-tit{
+  font-size:13px;color:var(--c-suave);margin:0 0 20px;
+}
+.cadena__pasos{list-style:none;margin:0;padding:0;position:relative}
+.cadena__pasos::before{
+  content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;
+  background:var(--c-linea);
+}
+.cadena__pasos li{
+  position:relative;display:grid;grid-template-columns:auto 1fr;
+  gap:0 18px;padding:0 0 22px 26px;
+}
+.cadena__pasos li:last-child{padding-bottom:0}
+.cadena__pasos li::before{
+  content:'';position:absolute;left:0;top:7px;width:11px;height:11px;
+  border-radius:50%;background:var(--c-azul);border:1px solid rgba(250,250,250,.35);
+}
+.cadena__paso--eje::before{background:var(--c-dorado);border-color:var(--c-dorado)}
+
+.cadena__hora{
+  font-family:var(--eos-font-mono);font-size:12px;color:var(--c-suave);
+  padding-top:2px;letter-spacing:.02em;
+}
+.cadena__cuerpo{min-width:0}
+.cadena__donde{display:block;font-size:14px;font-weight:600;color:var(--c-texto);margin-bottom:3px}
+.cadena__cuerpo p{margin:0;font-size:14px;line-height:1.55;color:var(--c-suave)}
+.cadena__lote{
+  font-family:var(--eos-font-mono);font-weight:500;color:var(--c-dorado);
+  letter-spacing:.01em;
+}
+.cadena__alerta{
+  display:inline-block;margin-top:9px;padding:3px 9px;border-radius:5px;
+  font-size:12px;color:var(--c-coral);
+  background:rgba(255,142,114,.10);border:1px solid rgba(255,142,114,.28);
+}
+
+@media (max-width:900px){
+  .cadena__grid{grid-template-columns:1fr;gap:38px}
+  .cadena__texto{max-width:none}
+  .cadena__datos{grid-template-columns:1fr 1fr;gap:20px 28px}
+}
+@media (max-width:520px){
+  .cadena__panel{padding:22px 18px 24px}
+  .cadena__pasos li{grid-template-columns:1fr;gap:2px;padding-left:24px}
+  .cadena__hora{padding-top:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .cadena__btn{transition:none}
+}
